@@ -1,0 +1,22 @@
+version: "1.0"
+
+
+services:
+  server1:
+    container_name: server1
+    image: nginx:1.27.0 
+    volumes:
+      - /opt/docker/siteITdepart/server1/html/:/usr/share/nginx/html
+    ports:
+      - 81:80
+    restart: on-failure:3
+  server2:
+     container_name: server2
+     image: nginx:1.27.0 
+     volumes:
+       - /opt/docker/siteITdepart/server2/html/:/usr/share/nginx/html
+     ports:
+       - 82:80
+     restart: on-failure:3
+
+
